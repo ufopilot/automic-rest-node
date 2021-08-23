@@ -1,43 +1,15 @@
 {
-  "_from": "automic-rest",
-  "_id": "automic-rest@1.0.0",
-  "_inBundle": false,
-  "_integrity": "sha512-mY6v5P4EBN3oEMNEM94uhh34wgOy/jbe1xKC7yOhu7nag10LaUMi7ScvwZgTswSjlMDvCKu9BnyyN58bWRUm3A==",
-  "_location": "/automic-rest",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "automic-rest",
-    "name": "automic-rest",
-    "escapedName": "automic-rest",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/automic-rest/-/automic-rest-1.0.0.tgz",
-  "_shasum": "caa3521e10cce036c4709798b4d5481b4f53a056",
-  "_spec": "automic-rest",
-  "_where": "C:\\Users\\xgadyou\\Entwicklung\\GITUB\\Node_Modules",
-  "author": {
-    "name": "ufopilot"
-  },
-  "bundleDependencies": false,
-  "deprecated": false,
-  "description": "call automic respapi via node",
-  "keywords": [
-    "automic",
-    "restapi"
-  ],
-  "license": "ISC",
-  "main": "index.js",
   "name": "automic-rest",
+  "version": "1.0.12",
+  "description": "call automic respapi via node",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "version": "1.0.11"
+  "author": "ufopilot",
+  "license": "MIT",
+  "keywords": [
+    "automic",
+    "restapi"
+  ]
 }
