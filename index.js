@@ -26,11 +26,11 @@ async function connect(options, callback) {
     if (options.basicauth != null || options.basicauth.trim() != "") basicauth =  options.basicauth;
     if (options.url != null && options.url.trim() != "") url = options.url;
     if (options.cert != null && options.cert.trim() != "") cert = options.cert;
-    if (options.timeout != null && options.timeout.trim() != "") timeout = options.timeout;
+    if (options.timeout != null && options.timeout.toString().trim() != "") timeout = options.timeout;
     
     if (callback == null) callback = defaultCallback;
 
-    handleSSL()
+    //handleSSL()
     handleProxy()
     setAuth()
     return this
@@ -41,6 +41,7 @@ exports.connect = connect
 const setPath = (str, cl) => {
     return str.replace("{client_id}", cl)
 }
+
 
 const setAuth = () => {
     if (basicauth != null) {
@@ -75,6 +76,7 @@ const getUrl = (path) => {
 }
 
 function doRequest(opt) {
+    console.log(timeout)
     if (opt.body == null) opt.body = {};
     return new Promise(function(resolve, reject) {
         try {
@@ -87,6 +89,7 @@ function doRequest(opt) {
                         'Content-type': 'application/json',
                         'Accept': 'application/json'
                     },
+                    //timeout: timeout,
                     body: JSON.stringify(opt.body)
                 },
                 function(error, response, body) {
