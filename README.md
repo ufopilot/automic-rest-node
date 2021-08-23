@@ -5,13 +5,13 @@ Automic-Rest-Client generated from AE/Swagger <br>
 <a >https://docs.automic.com/documentation/webhelp/english/AA/12.3/DOCU/12.3/REST%20API/Automation.Engine/swagger.json</a>
 #
 
-## install
+## Install
 ```shell
 npm install automic-rest
 
 ```
 
-## usage
+## Usage
 ```javascript
 
 const  automicrest = require('automic-rest');
@@ -33,7 +33,7 @@ const  automicrest = require('automic-rest');
 
 ```
 
-#
+# Functions
 <ul>
      <li>
          <a href="#executions">executions</a>
