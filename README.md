@@ -6,6 +6,12 @@ Automic-Rest-Client generated from AE/Swagger <br>
 #
 
 
+```shell
+npm install automic-rest
+
+```
+
+
 ```javascript
 
 const  automicrest = require('automic-rest');
