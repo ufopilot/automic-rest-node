@@ -75,6 +75,7 @@ const getUrl = (path) => {
 }
 
 function doRequest(opt) {
+    if (opt.body == null) opt.body = {};
     return new Promise(function(resolve, reject) {
         try {
             request({
@@ -85,12 +86,18 @@ function doRequest(opt) {
                         "Authorization": auth,
                         'Content-type': 'application/json',
                         'Accept': 'application/json'
-                    }
+                    },
+                    body: JSON.stringify(opt.body)
                 },
                 function(error, response, body) {
-                    let data = JSON.parse(body)
-                    data.statusCode = response.statusCode
+                    if (opt.path == '/ping'){
+                        var data = {}
+                    }else{
+                        var data = JSON.parse(body)
+                    }
 
+                    data.statusCode = response.statusCode
+                    
                     if (!error && response.statusCode == 200) {
                         data.statusTest = 'success'
                         resolve(data);
@@ -112,40 +119,6 @@ function defaultCallback(err) {
     if (err) throw err;
 }
 
-//async function listClients(client_id) {
-//    // Summary: List of clients in the system. 
-//    var func = new Error().stack.match(/at (.*?) /)[1].replace('Object.', '');
-//    return await doRequest({
-//        path: setPath(paths[func], client_id),
-//        method: 'GET'
-//    })
-//}
-//
-//async function listAgents(client_id) {
-//    // Summary: List of agents in the system. 
-//    var func = new Error().stack.match(/at (.*?) /)[1].replace('Object.', '');
-//    return await doRequest({
-//        path: setPath(paths[func], client_id),
-//        method: 'GET'
-//    })
-//}
-//
-//async function listAgentgroups(client_id) {
-//    // Summary: List of agents in the system. 
-//    var func = new Error().stack.match(/at Object\.(.*?) /)[1];
-//    return await doRequest({
-//        path: setPath(paths[func], client_id),
-//        method: 'GET'
-//    })
-//}
-//
-//
-//
-//
-//exports.listClients = listClients
-//exports.listAgents = listAgents
-//exports.listAgentgroups = listAgentgroups
-//
 
 async function activateScript(client_id, body=null){
     // Summary: Runs scripts written in the Automation Engine scripting language. 
