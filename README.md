@@ -33,7 +33,7 @@ const  automicrest = require('automic-rest');
 
 ```
 
-# Functions
+## Functions
 <ul>
      <li>
          <a href="#executions">executions</a>
